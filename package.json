@@ -10,8 +10,10 @@
   },
   "devDependencies": {
     "glob": "^11.0.0",
+    "nanoid": "^5.0.7",
     "postcss": "^8.4.41",
     "postcss-sort-media-queries": "^5.2.0",
+    "simplelightbox": "^2.14.3",
     "vite": "^5.4.6"
   },
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
