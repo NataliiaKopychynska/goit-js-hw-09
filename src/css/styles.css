@@ -27,17 +27,26 @@
   padding: 8px 16px;
   width: 95px;
   height: 40px;
-  background: #4e75ff;
+  border: solid 1px #4e75ff;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #4e75ff;
   text-decoration: none;
 }
 
 .option-div > a:hover {
   background: #6c8cff;
+  color: aliceblue;
+}
+
+.option-div > a:active {
+  background: #4e75ff;
+}
+
+.option-div > .active {
+  background-color: #e6ebff;
 }
 
 .h-main {
