@@ -7,3 +7,43 @@
 /* Common styles */
 @import url('./gallery.css');
 @import url('./form.css');
+
+.option-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 23px;
+  gap: 16px;
+}
+.option-div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 95px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+}
+
+.option-div > a:hover {
+  background: #6c8cff;
+}
+
+.h-main {
+  font-size: 32px;
+  color: #4e75ff;
+  letter-spacing: 0.02em;
+  text-align: center;
+  max-width: 0 auto;
+}

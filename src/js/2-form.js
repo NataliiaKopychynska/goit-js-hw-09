@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
-const formData = { email: '', message: '' };
 
-const form = document.querySelector('feedback-form');
+const formData = { email: '', message: '' };
+const form = document.querySelector('.feedback-form'); // Переконайтеся, що це правильно
 const STORAGE_KEY = 'feedback-form-state';
 
 populateForm();
@@ -10,7 +10,7 @@ form.addEventListener('input', onInputChange);
 form.addEventListener('submit', onFormSubmit);
 
 function onInputChange(event) {
-  formDate[event.target.name] = event.target.value;
+  formData[event.target.name] = event.target.value; // Правильно
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
@@ -28,7 +28,8 @@ function onFormSubmit(event) {
   // Очищуємо все після успішної відправки
   localStorage.removeItem(STORAGE_KEY); // Очищаємо сховище
   form.reset(); // Скидаємо поля форми
-  formData = { email: '', message: '' }; // Очищаємо об'єкт formData
+  formData.email = ''; // Очищаємо email
+  formData.message = ''; // Очищаємо message
 }
 
 // Функція для відновлення даних із локального сховища
@@ -36,10 +37,8 @@ function populateForm() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
   if (savedData) {
-    formData = savedData; // Відновлюємо об'єкт formData
-
-    // Заповнюємо поля форми
-    for (const [key, value] of Object.entries(formData)) {
+    for (const [key, value] of Object.entries(savedData)) {
+      formData[key] = value; // Відновлюємо об'єкт formData
       form.elements[key].value = value || ''; // Встановлюємо значення
     }
   }
